@@ -30,7 +30,7 @@ jobs:
         run: pytest
 
 
-security:
+  security:
     runs-on: ubuntu-latest
 
     permissions:
@@ -48,7 +48,7 @@ security:
 
       - name: Perform CodeQL analysis
         uses: github/codeql-action/analyze@v3
-docker:
+  docker:
     runs-on: ubuntu-latest
 
     needs:
