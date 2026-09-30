@@ -48,3 +48,28 @@ jobs:
 
       - name: Perform CodeQL analysis
         uses: github/codeql-action/analyze@v3
+   jobs:
+
+  test:
+    ...
+
+  security:
+    ...
+
+  docker:
+    runs-on: ubuntu-latest
+
+    needs:
+      - test
+      - security
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: false
+          tags: devsecops-demo:latest
