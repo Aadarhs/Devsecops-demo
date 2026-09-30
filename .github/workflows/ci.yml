@@ -69,4 +69,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: Aadarhs/devsecops-demo:latest
+          tags: asurachaos/devsecops-demo: latest
